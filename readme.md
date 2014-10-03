@@ -16,4 +16,5 @@ languages and frameworks I use in the future.
 http://www.swfcabin.com/open/1412374786
 
 <h1>Testing</h1>
-NA
+W3 Validations:
+http://validator.w3.org/check?uri=http%3A%2F%2Fp2.extrovertedcoders.com%2Findex.php
