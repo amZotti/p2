@@ -1,12 +1,36 @@
+<?php
+   $_POST[word_count];
+
+  function generate_random_phrase() {
+    $words = get_words();
+    $number_of_words = 4;
+    $phrase = ""; 
+    for ($i = 0; $i < $number_of_words; $i++) {
+      $word = $words[array_rand($words)];
+      $phrase = $phrase." ".$word;
+    } 
+    return $phrase;
+  }
+
+  function get_words() {
+    $BASE_WORDS = "this is my sentence and I really hope you 
+	like it the narwhales bacon at midnight but only in 
+	ferver where can paper laptops spoon door knobs 
+	head phones watches";
+    $words = explode(' ', $BASE_WORDS);
+    return $words;
+  }
+?>
+
 <html>
 	<head>
 		<title>xkcd Password Generator</title>
 	</head>
 	<body>
 		<h1>xkcd Password Generator</h1>
-		<p class="password"></p>
+		<p class="password"><?php echo generate_random_phrase() ?></p>
 		
-		<form>
+		<form action="index.php" method="POST">
 			<label for="word_count">Number of words? (Max-9)</label>
 			<input id="word_count" type="text" value="" name="word_count"
 				maxlength="1"></input>
