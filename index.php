@@ -49,17 +49,17 @@ return $words;
     <form action="index.php" method="POST">
       <label for="word_count">Number of words? (Max-9)</label>
       <input id="word_count" type="text" value="" name="word_count"
-        maxlength="1"></input>
+        maxlength="1">
       <br>
 
-      <input id="include_numbers" type="checkbox" name="include_numbers"></input>
+      <input id="include_numbers" type="checkbox" name="include_numbers">
       <label for="include_numbers">Include a number in the password?</label>
       <br>
 
-      <input id="include_symbols" type="checkbox" name="include_symbols"></input>
+      <input id="include_symbols" type="checkbox" name="include_symbols">
       <label for="include_symbols">Include a symbol in the password?</label>
 
-      <input class="generate-btn" type="submit" value="Generate new password"></input>
+      <input class="generate-btn" type="submit" value="Generate new password">
     </form>
   </body>
 </html>
