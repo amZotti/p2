@@ -4,10 +4,18 @@
     $words = get_words();
     $number_of_words = get_word_count();
     $phrase = ""; 
+    $symbols = "!@#$%^&*()";
     for ($i = 0; $i < $number_of_words; $i++) {
       $word = $words[array_rand($words)];
       $phrase = $phrase." ".$word;
-    } 
+    }
+ 
+    if (isset($_POST['include_numbers']))
+      $phrase = $phrase.rand(0, 9);
+
+    if (isset($_POST['include_symbols']))
+      $phrase = $phrase.$symbols[rand(0, 9)];
+   
     return $phrase;
   }
 
@@ -16,7 +24,6 @@
       $word_count = 4; #default
     else
       $word_count = $_POST['word_count'];
-    echo $word_count;
     return $word_count;
 }
 
