@@ -1,9 +1,8 @@
 <?php
-   $_POST[word_count];
 
   function generate_random_phrase() {
     $words = get_words();
-    $number_of_words = 4;
+    $number_of_words = get_word_count();
     $phrase = ""; 
     for ($i = 0; $i < $number_of_words; $i++) {
       $word = $words[array_rand($words)];
@@ -11,6 +10,15 @@
     } 
     return $phrase;
   }
+
+  function get_word_count() {
+    if ($_POST['word_count'] < 1 || $_POST['word_count'] > 9) 
+      $word_count = 4; #default
+    else
+      $word_count = $_POST['word_count'];
+    echo $word_count;
+    return $word_count;
+}
 
   function get_words() {
     $BASE_WORDS = "this is my sentence and I really hope you 
