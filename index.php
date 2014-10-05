@@ -5,10 +5,8 @@ function generate_random_phrase() {
   $number_of_words = get_word_count();
   $phrase = ""; 
   $symbols = "!@#$%^&*()";
-  for ($i = 0; $i < $number_of_words; $i++) {
-    $word = $words[array_rand($words)];
-    $phrase = $phrase." ".$word;
-  }
+  for ($i = 0;$i < $number_of_words;$i++)
+    $phrase .= " ".$words[$i];
 
   if (isset($_POST['include_numbers']))
     $phrase = $phrase.rand(0, 9);
@@ -28,12 +26,11 @@ function get_word_count() {
 }
 
 function get_words() {
-  $BASE_WORDS = "this is my sentence and I really hope you 
-    like it the narwhales bacon at midnight but only in 
-    ferver where can paper laptops spoon door knobs 
-    head phones watches";
-$words = explode(' ', $BASE_WORDS);
-return $words;
+
+  $BASE_WORDS = "my sentence really hope you like narwhales bacon at midnight but only ferver where can paper laptops spoon door knobs head phones watches barbeque not say";
+  $words = explode(' ', $BASE_WORDS);
+  shuffle($words);
+  return $words;
 }
 ?>
 <!DOCTYPE html>
